@@ -1,0 +1,197 @@
+{
+  // Formatters
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.black-formatter",
+    "editor.formatOnSave": true
+  },
+
+  "[rust]": {
+    "editor.defaultFormatter": "rust-lang.rust-analyzer",
+    "editor.formatOnSave": true
+  },
+
+  "[cpp]": {
+    "editor.defaultFormatter": "ms-vscode.cpptools",
+    "editor.formatOnSave": true
+  },
+
+  "[lua]": {
+    "editor.defaultFormatter": "sumneko.lua",
+    "editor.formatOnSave": true
+  },
+
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode", // or use the built-in formatter
+    "editor.formatOnSave": true
+  },
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+
+  // Language Servers
+  "python.languageServer": "Pylance",
+
+  "editor.defaultFormatter": "ms-python.python",
+  "python.formatting.provider": "black",
+  "python.formatting.blackArgs": ["--line-length", "88"],
+
+  // Window zoom level
+  "window.zoomLevel": 1,
+
+  // Git settings
+  "git.openRepositoryInParentFolders": "never",
+  // Editor UI preferences
+  "editor.minimap.enabled": false,
+  "editor.lineNumbers": "relative",
+  "editor.tabSize": 2,
+  "editor.insertSpaces": true,
+
+  "editor.detectIndentation": false,
+  "editor.wordWrap": "off",
+  "zenMode.centerLayout": false,
+  "zenMode.hideLineNumbers": false,
+  "editor.fontLigatures": true,
+  "zenMode.showTabs": "single",
+  "editor.parameterHints.enabled": false,
+
+  // Vim settings
+  "vim": {
+    "hlsearch": true,
+    "easymotion": true,
+    "incsearch": true,
+    "useSystemClipboard": true,
+    "useCtrlKeys": true,
+
+    "highlightedyank": {
+      "enable": true,
+      "color": "rgba(255, 61, 188, 0.8)",
+      "textColor": "white",
+      "duration": 400
+    }
+  },
+
+  // Auto-formatting settings
+  "editor.formatOnSave": true,
+  "editor.formatOnPaste": true,
+
+  // Search settings
+  "search.useIgnoreFilesByDefault": true,
+  "search.smartCase": true,
+
+  // File management settings
+  "files.autoSave": "onFocusChange",
+  "files.trimTrailingWhitespace": true,
+  "files.insertFinalNewline": true,
+  "files.trimFinalNewlines": true,
+
+  // Explorer settings
+  "explorer.confirmDelete": false,
+  "explorer.confirmDragAndDrop": false,
+
+  // Clipboard and editor interaction settings
+  "editor.clipboard": "on",
+  "editor.splitRight": true,
+  "editor.splitBelow": true,
+
+  // Cursor settings
+  "editor.cursorSmoothCaretAnimation": "on",
+  "editor.cursorWidth": 2,
+  "editor.renderWhitespace": "none",
+  "editor.smoothScrolling": true,
+  "editor.cursorBlinking": "blink",
+  "editor.cursorStyle": "block",
+  "editor.cursorSurroundingLines": 5,
+  "editor.cursorSurroundingLinesStyle": "all",
+
+  // Search and find settings
+  "editor.find.autoFindInSelection": "always",
+  "editor.find.seedSearchStringFromSelection": "always",
+  "editor.find.addExtraSpaceOnTop": false,
+
+  // Breadcrumbs and UI settings
+  "breadcrumbs.enabled": false,
+  "workbench.iconTheme": "emoji-file-icons",
+  "workbench.productIconTheme": "emoji-product-icons",
+
+  // Rust analyzer settings
+  "rust-analyzer.cargo.watchCommand": "check",
+  "rust-analyzer.procMacro.enable": true,
+
+  // Vim insert mode keybindings
+  "vim.insertModeKeyBindings": [
+    {
+      "before": ["j", "k"],
+      "after": ["<Esc>"]
+    }
+  ],
+  // Vim insert mode keybindings
+  "vim.visualModeKeyBindings": [
+    {
+      "before": ["j", "k"],
+      "after": ["<Esc>"]
+    }
+  ],
+
+  //  Visual mode keybindings (non-recursive)
+  "vim.visualModeKeyBindingsNonRecursive": [
+    {
+      "before": [">"],
+      "commands": ["editor.action.indentLines"]
+    },
+    {
+      "before": ["<"],
+      "commands": ["editor.action.outdentLines"]
+    }
+  ],
+
+  // Handle special keys in Vim mode
+  "vim.handleKeys": {
+    // "<C-a>": false,
+    //"<C-f>": false
+    //    " ": false
+  },
+
+  // Terminal settings
+  "terminal.integrated.tabs.enabled": false,
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "workbench.activityBar.location": "top",
+  "terminal.integrated.fontFamily": "FiraCode Nerd Font",
+  "terminal.integrated.cursorBlinking": true,
+  "terminal.integrated.cursorStyleInactive": "block",
+  "terminal.integrated.defaultProfile.osx": "tmux-shell",
+  "terminal.integrated.env.osx": {
+    "CW_NEW_SESSION": "1"
+  },
+  "terminal.integrated.profiles.osx": {
+    //...existing profiles...
+    "tmux-shell": {
+      "path": "tmux",
+      "args": ["new-session", "-A", "-s", "vscode:${workspaceFolder}"]
+    }
+  },
+  "key": "alt-p",
+  "command": "workbench.action.quickOpenSelectNext",
+  "when": "inProjectManagerList",
+  "errorLens.gutterIconsEnabled": true,
+  "errorLens.fontStyleItalic": true,
+  "errorLens.gutterIconSet": "emoji",
+  "screencastMode.fontSize": 20,
+  "screencastMode.verticalOffset": 1,
+  "editor.fontFamily": "FiraCode Nerd Font",
+  "screencastMode.keyboardOverlayTimeout": 1600,
+  "workbench.editor.showTabs": "single",
+  // "workbench.colorTheme": "Kali Terminal Dark",
+  "oneDarkPro.editorTheme": "One Dark Pro Darker",
+  "workbench.colorCustomizations": {
+    "terminal.background": "#00000000"
+  },
+  "workbench.settings.applyToAllProfiles": ["workbench.colorCustomizations"],
+  "workbench.colorTheme": "One Dark Pro Darker"
+}

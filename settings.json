@@ -59,20 +59,34 @@
   "zenMode.showTabs": "single",
   "editor.parameterHints.enabled": false,
 
-  // Vim settings
   "vim": {
     "hlsearch": true,
     "easymotion": true,
     "incsearch": true,
     "useSystemClipboard": true,
     "useCtrlKeys": true,
-
     "highlightedyank": {
       "enable": true,
-      "color": "rgba(255, 61, 188, 0.8)",
-      "textColor": "white",
+      "color": "rgba(255, 0, 255, 0.6)", // Pure neon magenta
+      "textColor": "#ffffff", // White for contrast
       "duration": 400
     }
+  },
+  "workbench.colorCustomizations": {
+    "editor.snippetHighlightBackground": "#FF149380", // Deep pink
+    "editor.snippetHighlightBorder": "#FF69B4", // Hot pink
+
+    "editor.selectionBackground": "#FF00FF80", // Magenta
+    "editor.selectionBorder": "#FF1493", // Deep pink
+
+    "editor.wordHighlightBackground": "#FF69B480", // Hot pink
+    "editor.wordHighlightBorder": "#FF1493", // Deep pink
+
+    "terminal.background": "#00000000", // Transparent
+    "editor.lineHighlightBackground": "#63598122", // Subtle pink background
+
+    "editorCursor.foreground": "#FF00FF", // Bright magenta
+    "editor.selectionHighlightBackground": "#FF69B440" // Transparent hot pink
   },
 
   // Auto-formatting settings
@@ -104,7 +118,7 @@
   "editor.renderWhitespace": "none",
   "editor.smoothScrolling": true,
   "editor.cursorBlinking": "blink",
-  "editor.cursorStyle": "block",
+  "editor.cursorStyle": "block-outline",
   "editor.cursorSurroundingLines": 5,
   "editor.cursorSurroundingLinesStyle": "all",
 
@@ -115,8 +129,6 @@
 
   // Breadcrumbs and UI settings
   "breadcrumbs.enabled": false,
-  "workbench.iconTheme": "emoji-file-icons",
-  "workbench.productIconTheme": "emoji-product-icons",
 
   // Rust analyzer settings
   "rust-analyzer.cargo.watchCommand": "check",
@@ -162,7 +174,7 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "workbench.activityBar.location": "top",
-  "terminal.integrated.fontFamily": "FiraCode Nerd Font",
+  "terminal.integrated.fontFamily": "IosevkaTerm Nerd Font",
   "terminal.integrated.cursorBlinking": true,
   "terminal.integrated.cursorStyleInactive": "block",
   "terminal.integrated.defaultProfile.osx": "tmux-shell",
@@ -184,14 +196,21 @@
   "errorLens.gutterIconSet": "emoji",
   "screencastMode.fontSize": 20,
   "screencastMode.verticalOffset": 1,
-  "editor.fontFamily": "FiraCode Nerd Font",
+  "editor.fontFamily": "IosevkaTerm Nerd Font",
   "screencastMode.keyboardOverlayTimeout": 1600,
   "workbench.editor.showTabs": "single",
-  // "workbench.colorTheme": "Kali Terminal Dark",
-  "oneDarkPro.editorTheme": "One Dark Pro Darker",
-  "workbench.colorCustomizations": {
-    "terminal.background": "#00000000"
-  },
+  "terminal.background": "#00000000",
   "workbench.settings.applyToAllProfiles": ["workbench.colorCustomizations"],
-  "workbench.colorTheme": "One Dark Pro Darker"
+  "workbench.colorTheme": "SynthWave '84",
+  "workbench.startupEditor": "none",
+  "window.newWindowProfile": "Carlos Juan",
+  "oneDarkPro.editorTheme": "One Dark Pro Darker",
+  "workbench.editorAssociations": {
+    "*.copilotmd": "vscode.markdown.preview.editor",
+    "{git,gitlens}:/**/*.{md,csv,svg}": "default"
+  },
+  "editor.fontSize": 16,
+  "terminal.integrated.fontSize": 16,
+  "workbench.iconTheme": "emoji-file-icons",
+  "database-client.autoSync": true
 }

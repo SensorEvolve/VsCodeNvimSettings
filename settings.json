@@ -20,22 +20,35 @@
     "editor.formatOnSave": true
   },
 
-  "[json]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode", // or use the built-in formatter
-    "editor.formatOnSave": true
-  },
-  "[html]": {
+  "[typescript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.formatOnSave": true
   },
-  "[css]": {
+  "[typescriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.formatOnSave": true
   },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+  "[scss]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true,
+  },
+
+  // HTML formatting
+  "html.format.enable": true,
+  "html.format.endWithNewline": false,
 
   // Language Servers
   "python.languageServer": "Pylance",
 
+  // Python formatting
   "editor.defaultFormatter": "ms-python.python",
   "python.formatting.provider": "black",
   "python.formatting.blackArgs": ["--line-length", "88"],
@@ -45,12 +58,12 @@
 
   // Git settings
   "git.openRepositoryInParentFolders": "never",
+
   // Editor UI preferences
   "editor.minimap.enabled": false,
   "editor.lineNumbers": "relative",
   "editor.tabSize": 2,
   "editor.insertSpaces": true,
-
   "editor.detectIndentation": false,
   "editor.wordWrap": "off",
   "zenMode.centerLayout": false,
@@ -59,46 +72,31 @@
   "zenMode.showTabs": "single",
   "editor.parameterHints.enabled": false,
 
+
+  // Vim settings
   "vim": {
     "hlsearch": true,
     "easymotion": true,
     "incsearch": true,
-    "useSystemClipboard": true,
+    "useSystemClipboard": false,
     "useCtrlKeys": true,
-    "highlightedyank": {
-      "enable": true,
-      "color": "rgba(255, 0, 255, 0.6)", // Pure neon magenta
-      "textColor": "#ffffff", // White for contrast
-      "duration": 400
+   },
+
+  "vim.handleKeys": {
+    "k": true
+  },
+/*   "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "before": [":"],
+      "commands": ["workbench.action.showCommands"]
     }
-  },
-  "workbench.colorCustomizations": {
-    "editor.snippetHighlightBackground": "#FF149380", // Deep pink
-    "editor.snippetHighlightBorder": "#FF69B4", // Hot pink
-
-    "editor.selectionBackground": "#FF00FF80", // Magenta
-    "editor.selectionBorder": "#FF1493", // Deep pink
-
-    "editor.wordHighlightBackground": "#FF69B480", // Hot pink
-    "editor.wordHighlightBorder": "#FF1493", // Deep pink
-
-    "terminal.background": "#00000000", // Transparent
-    "editor.lineHighlightBackground": "#63598122", // Subtle pink background
-
-    "editorCursor.foreground": "#FF00FF", // Bright magenta
-    "editor.selectionHighlightBackground": "#FF69B440" // Transparent hot pink
-  },
-
-  // Auto-formatting settings
+  ], */
   "editor.formatOnSave": true,
   "editor.formatOnPaste": true,
 
   // Search settings
   "search.useIgnoreFilesByDefault": true,
   "search.smartCase": true,
-
-  // File management settings
-  "files.autoSave": "onFocusChange",
   "files.trimTrailingWhitespace": true,
   "files.insertFinalNewline": true,
   "files.trimFinalNewlines": true,
@@ -106,6 +104,7 @@
   // Explorer settings
   "explorer.confirmDelete": false,
   "explorer.confirmDragAndDrop": false,
+  "explorer.autoReveal": true,
 
   // Clipboard and editor interaction settings
   "editor.clipboard": "on",
@@ -117,18 +116,16 @@
   "editor.cursorWidth": 2,
   "editor.renderWhitespace": "none",
   "editor.smoothScrolling": true,
-  "editor.cursorBlinking": "blink",
-  "editor.cursorStyle": "block-outline",
+  "editor.cursorBlinking": "phase",
+  "editor.cursorStyle": "line",
   "editor.cursorSurroundingLines": 5,
   "editor.cursorSurroundingLinesStyle": "all",
+  "editor.lineHeight": 22,
 
   // Search and find settings
   "editor.find.autoFindInSelection": "always",
   "editor.find.seedSearchStringFromSelection": "always",
   "editor.find.addExtraSpaceOnTop": false,
-
-  // Breadcrumbs and UI settings
-  "breadcrumbs.enabled": false,
 
   // Rust analyzer settings
   "rust-analyzer.cargo.watchCommand": "check",
@@ -141,7 +138,8 @@
       "after": ["<Esc>"]
     }
   ],
-  // Vim insert mode keybindings
+
+  // Vim visual mode keybindings
   "vim.visualModeKeyBindings": [
     {
       "before": ["j", "k"],
@@ -149,7 +147,7 @@
     }
   ],
 
-  //  Visual mode keybindings (non-recursive)
+  // Vim visual mode keybindings (non-recursive)
   "vim.visualModeKeyBindingsNonRecursive": [
     {
       "before": [">"],
@@ -160,57 +158,79 @@
       "commands": ["editor.action.outdentLines"]
     }
   ],
-
-  // Handle special keys in Vim mode
-  "vim.handleKeys": {
-    // "<C-a>": false,
-    //"<C-f>": false
-    //    " ": false
-  },
-
-  // Terminal settings
-  "terminal.integrated.tabs.enabled": false,
-  "[jsonc]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "workbench.activityBar.location": "top",
   "terminal.integrated.fontFamily": "IosevkaTerm Nerd Font",
   "terminal.integrated.cursorBlinking": true,
   "terminal.integrated.cursorStyleInactive": "block",
-  "terminal.integrated.defaultProfile.osx": "tmux-shell",
+  "terminal.integrated.defaultProfile.osx": "zsh",
   "terminal.integrated.env.osx": {
     "CW_NEW_SESSION": "1"
   },
-  "terminal.integrated.profiles.osx": {
-    //...existing profiles...
-    "tmux-shell": {
-      "path": "tmux",
-      "args": ["new-session", "-A", "-s", "vscode:${workspaceFolder}"]
-    }
-  },
-  "key": "alt-p",
-  "command": "workbench.action.quickOpenSelectNext",
-  "when": "inProjectManagerList",
+
+  // ErrorLens settings
   "errorLens.gutterIconsEnabled": true,
   "errorLens.fontStyleItalic": true,
   "errorLens.gutterIconSet": "emoji",
+
+  // Screencast mode settings
   "screencastMode.fontSize": 20,
   "screencastMode.verticalOffset": 1,
-  "editor.fontFamily": "IosevkaTerm Nerd Font",
   "screencastMode.keyboardOverlayTimeout": 1600,
-  "workbench.editor.showTabs": "single",
-  "terminal.background": "#00000000",
-  "workbench.settings.applyToAllProfiles": ["workbench.colorCustomizations"],
-  "workbench.colorTheme": "SynthWave '84",
-  "workbench.startupEditor": "none",
-  "window.newWindowProfile": "Carlos Juan",
-  "oneDarkPro.editorTheme": "One Dark Pro Darker",
+
+  // Font settings
+  "editor.fontFamily": "IosevkaTerm Nerd Font",
+
+  // Database sync setting
+  "database-client.autoSync": true,
+
+  // Editor settings
+  "editor.renderControlCharacters": false,
+  "editor.stickyScroll.enabled": false,
+  "workbench.editor.editorActionsLocation": "hidden",
+
+  // Workbench settings
+  "workbench.activityBar.location": "top",
+
+  //  Terminal background settings
+  "terminal.integrated.backgroundOpacity": 1.0, // Increased opacity for better visibility
+  "terminal.integrated.gpuAcceleration": "on",
+  "terminal.background": "#1F2428",
+  "terminal.integrated.defaultProfile.linux": "tmux-shell", // Make sure we're using the right profile
+  "terminal.integrated.persistentSessionReviveProcess": "onExitAndWindowClose",
+
+  // Editor associations
   "workbench.editorAssociations": {
     "*.copilotmd": "vscode.markdown.preview.editor",
     "{git,gitlens}:/**/*.{md,csv,svg}": "default"
   },
-  "editor.fontSize": 16,
-  "terminal.integrated.fontSize": 16,
+
+  "breadcrumbs.enabled": false,
+  "terminal.external.linuxExec": "",
+  "editor.fontSize": 18,
+  "terminal.integrated.fontSize": 18,
+  "workbench.startupEditor": "none",
+  "javascript.updateImportsOnFileMove.enabled": "never",
+  "files.autoSave": "onFocusChange",
+  "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
   "workbench.iconTheme": "emoji-file-icons",
-  "database-client.autoSync": true
+  "workbench.colorTheme": "GitHub Dark Mode",
+
+
+  "vim.highlightedyank.enable": true,
+  "vim.highlightedyank.color": "#FF00FF",
+  "git.autofetch": true,
+
+"workbench.colorCustomizations": {
+    "[GitHub Dark Mode]": {
+        "editor.selectionBackground": "#FF00FF", // Change this to your preferred background color
+        "editor.selectionForeground": "#ffffff"  // Optional: Change text color when selected
+
+    }
+},
+"window.newWindowProfile": "Default",
+"codeium.enableConfig": {
+  "*": true,
+  "markdown": true
+},
+
+
 }

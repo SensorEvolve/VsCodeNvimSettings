@@ -8,9 +8,15 @@
   "vim.leader": "<space>",
   "vim.highlightedyank.enable": true,
   "vim.highlightedyank.color": "#FF00FF",
+  "vim.highlightedyank.textColor": "white",
 
   // Normal mode keybindings
   "vim.normalModeKeyBindingsNonRecursive": [
+    // From € to $
+    {
+      "before": ["£"],
+      "after": ["#"]
+    },
     // Save
     {
       "before": ["<leader>", "w"],
@@ -66,7 +72,7 @@
     },
     // Find and Open
     {
-      "before": ["<leader>", "<leader>"],
+      "before": ["<leader>", "f", "f"],
       "commands": ["workbench.action.quickOpen"]
     },
     {
@@ -81,6 +87,20 @@
       "before": ["<leader>", "f", "g"],
       "commands": ["workbench.action.findInFiles"]
     },
+    {
+      "before": ["<leader>", "f", "w"],
+      "after": ["/"]
+    },
+    {
+      "before": ["<leader>", "f", "q"],
+      "commands": [":nohl"]
+    },
+    {
+      //Open vim commandline
+      "before": ["<leader>", "c", "l"],
+      "commands": ["workbench.action.quickOpen"]
+    },
+
     // Zen Mode
     {
       "before": ["<leader>", "z", "m"],
@@ -147,7 +167,20 @@
     "<C-a>": false,
     "<C-f>": false
   },
-
+  "vim.operatorPendingModeKeyBindings": [
+    {
+      "before": ["{"],
+      "after": ["w"]
+    },
+    {
+      "before": ["L"],
+      "after": ["$"]
+    },
+    {
+      "before": ["H"],
+      "after": ["^"]
+    }
+  ],
   // Formatters
   "[python]": {
     "editor.defaultFormatter": "ms-python.black-formatter",
@@ -233,9 +266,8 @@
   "editor.parameterHints.enabled": false,
   "editor.formatOnSave": true,
   "editor.formatOnPaste": true,
-  "editor.fontSize": 16,
+  "editor.fontSize": 15,
   "editor.renderControlCharacters": false,
-  "editor.stickyScroll.enabled": false,
 
   // Zen Mode settings
   "zenMode.centerLayout": false,
@@ -266,15 +298,15 @@
   "editor.cursorStyle": "line",
   "editor.cursorSurroundingLines": 5,
   "editor.cursorSurroundingLinesStyle": "all",
-  "editor.lineHeight": 22,
+  "editor.lineHeight": 20,
 
   // Split settings
   "editor.splitRight": true,
   "editor.splitBelow": true,
 
   // Terminal settings
-  "terminal.integrated.fontFamily": "IosevkaTerm Nerd Font",
-  "terminal.integrated.fontSize": 16,
+  "terminal.integrated.fontFamily": "ShureTechMono Nerd Font",
+  "terminal.integrated.fontSize": 15,
   "terminal.integrated.cursorBlinking": true,
   "terminal.integrated.cursorStyleInactive": "block",
   "terminal.integrated.defaultProfile.osx": "zsh",
@@ -294,12 +326,12 @@
   "errorLens.gutterIconSet": "emoji",
 
   // Screencast mode settings
-  "screencastMode.fontSize": 20,
-  "screencastMode.verticalOffset": 1,
+  "screencastMode.fontSize": 40,
+  "screencastMode.verticalOffset": 4,
   "screencastMode.keyboardOverlayTimeout": 1600,
 
   // Font settings
-  "editor.fontFamily": "IosevkaTerm Nerd Font",
+  "editor.fontFamily": "ShureTechMono Nerd Font",
 
   // Database settings
   "database-client.autoSync": true,
@@ -329,6 +361,7 @@
   "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
   "breadcrumbs.enabled": false,
   "window.newWindowProfile": "Default",
+
   "window.commandCenter": false,
   "codeium.enableConfig": {
     "*": true,
@@ -338,5 +371,10 @@
   // Performance improvements
   "extensions.experimental.affinity": {
     "vscodevim.vim": 1
-  }
+  },
+  "python.createEnvironment.trigger": "off",
+  "editor.stickyScroll.enabled": false,
+  "editor.showFoldingControls": "never",
+  "editor.glyphMargin": false,
+  "terminal.integrated.tabs.title": "${process}${cwd}"
 }
